@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Study ✏️</title>
+</head>
+<body>
+
+<!--/* 변수 ${ } 사용 */-->
+    <h1 th:text="${'안녕하세요 🐢'}">여기는 h1</h1>
+
+<!--/* 메시지 변수 #{ } 사용 */-->
+    <p th:text="#{welcome.message}">여기는 p</p>
+
+<!--/* 템플릿 변수 *{ } 사용 */-->
+    <input type="text" th:value="*{var}"/>
+    <input type="text" th:value="*{'🐢'}"/>
+
+    <br/>
+<!--/* 링크 변수 @{ } 사용 */-->
+    <a th:if="${null != link}" th:href="@{${link}}">여기는 a</a>
+
+<!--/* 반복문 사용 */-->
+    <ul th:each="num : ${list}">
+        <li th:text="*{num}"></li>
+    </ul>
+
+
+</body>
+</html>
